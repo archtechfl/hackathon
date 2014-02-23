@@ -90,29 +90,18 @@ var controller = new Leap.Controller({ enableGestures: true });
 					hand1.className="scissors";
 					leapValue = 'scissors';
 							
-				} else if (frame.fingers.length == 5) {
+				} else if (frame.fingers.length > 3) {
 					console.log("paper");
 					hand1.className="paper";
 					leapValue = 'paper';
 				
-				} else if (frame.fingers.length == 0 && frame.hands.length == 1) {
+				} else if (frame.fingers.length == 1 || frame.fingers.length == 0) {
 					console.log("rock");
 					hand1.className="rock";
 					leapValue = 'rock';
 				
-				} else if (frame.hands.length == 0){
-					console.log("where did you go? please don't leave me!");
-					leapValue = 'wheredidyougo?';
-					
-				} else if (frame.hands.length == 2) {
-					console.log("MORTAL KOMBAT");
-					hand1.className="mortalKombat";
-					leapValue = 'mortalKombat';
-					
-				} else if (frame.hands.length == 3) {
-					hand1.className="hollander";
-					leapValue = 'hollander';
-					
+				} else {
+					console.log("no valid gesture")
 				}	
 				/////////////////
 
@@ -213,8 +202,10 @@ var controller = new Leap.Controller({ enableGestures: true });
                 	console.log("Player 2: paper wins!");
                 } else if (result1 == 'rock' && result2 == 'scissors'){
                 	console.log("player 1: rock wins!");
-                } else {
+                } else if (result1 == 'rock' && result2 == 'rock'){
                 	console.log("Tie!");
+                } else {
+                	console.log("error");
                 }
                 
                 
