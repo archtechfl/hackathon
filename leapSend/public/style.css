@@ -53,4 +53,27 @@
 			position:absolute;
 			left:20%;
 			top:10px;
+			width:600px;
+			height:600px;
+		}
+		
+		#tie{
+			position: absolute;
+			left: 5%;
+			top: 2px;
+			opacity: .6;	
+		}
+		
+		#win{
+			position:relative;
+			top:200px;
+			width:250px;
+			height:250px;
+		}
+		
+		#loss{
+			position:relative;
+			top:200px;
+			width:250px;
+			height:250px;
 		}
