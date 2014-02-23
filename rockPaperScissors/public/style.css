@@ -57,10 +57,14 @@
 			height:600px;
 		}
 		
+		/* End of game screens */
 		#tie{
 			position:absolute;
-			left:30%;
-			top:400px;	
+			left:20%;
+			top:10px;
+			width:600px;
+			height:600px;
+			opacity: .6;	
 		}
 		
 		#win{
