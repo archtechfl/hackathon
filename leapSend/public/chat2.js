@@ -118,6 +118,7 @@ var controller = new Leap.Controller({ enableGestures: true });
     	
     		var result1 = messages[0];
         	var result2 = messages[1];
+        	console.log(messages);
                 console.log ("Result one: " + result1 + " result 2: " + result2);
                 
                 if (result1 == 'scissors' && result2 == 'rock'){
