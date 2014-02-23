@@ -10,8 +10,6 @@ window.onload = function() {
     var frame;
 
 var fieldLeap = document.getElementById("field");
-
-var fist = '';
     
 //new leap motion controller
 var controller = new Leap.Controller({ enableGestures: true });
@@ -38,6 +36,7 @@ var controller = new Leap.Controller({ enableGestures: true });
 			//Conver tip position to cube position
 			xPos = pointable.tipPosition[0];
 			
+<<<<<<< HEAD
 			if (frame.fingers.length <= 1){
 				fist = 'rock';
 			} else if (frame.fingers.length == 2) {
@@ -45,9 +44,12 @@ var controller = new Leap.Controller({ enableGestures: true });
 			} else {
 				fist = 'paper';
 			}
+=======
+			console.log(frame.hands);
+>>>>>>> b2b6247b6d8d5cdc03edfdc91c8714323bd0d606
 			//console.log(xPos);
 			
-			fieldLeap.value = fist;
+			fieldLeap.value = frame;
 
 		  }
 
@@ -58,7 +60,6 @@ var controller = new Leap.Controller({ enableGestures: true });
 //end leap controller
  
     socket.on('message', function (data) {
-    	//console.log(socket.id);
         if(data.message) 
         	{
             messages.push(data.message);
@@ -79,9 +80,14 @@ var controller = new Leap.Controller({ enableGestures: true });
         socket.emit('send', { message: text });
     };
     
+<<<<<<< HEAD
     io.on('connect', function () 
     	{
     		console.log(this.socket.sessionid);
     	});
     
 }
+=======
+   
+}
+>>>>>>> b2b6247b6d8d5cdc03edfdc91c8714323bd0d606
