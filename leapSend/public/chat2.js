@@ -73,7 +73,7 @@ var controller = new Leap.Controller({ enableGestures: true });
                 */
                 
                 	//Second comparison attempt
-                	if (messages.length >= 2)
+                	if (messages.length >= 3)
                 		{
                 			var result1 = messages[0];
                 			var result2 = messages[1];
