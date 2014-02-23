@@ -36,7 +36,8 @@ var controller = new Leap.Controller({ enableGestures: true });
 			//Conver tip position to cube position
 			xPos = pointable.tipPosition[0];
 			
-			console.log(xPos);
+			console.log(frame.hands);
+			//console.log(xPos);
 			
 			fieldLeap.value = frame;
 
