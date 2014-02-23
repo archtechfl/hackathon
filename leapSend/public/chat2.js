@@ -8,7 +8,7 @@ window.onload = function() {
     
     //graphic screens/splash
     var loseScreen=document.createElement('img');
-    //loseScreen.setAttribute("id", "lost")
+    loseScreen.setAttribute("id", "lost");
     
     var winScreen;
     var tieScreen;
