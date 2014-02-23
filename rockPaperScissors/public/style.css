@@ -56,3 +56,23 @@
 			width:600px;
 			height:600px;
 		}
+		
+		#tie{
+			position:absolute;
+			left:30%;
+			top:400px;	
+		}
+		
+		#win{
+			position:relative;
+			top:250px;
+			width:250px;
+			height:250px;
+		}
+		
+		#loss{
+			position:relative;
+			top:250px;
+			width:250px;
+			height:250px;
+		}
