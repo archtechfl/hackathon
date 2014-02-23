@@ -24,8 +24,6 @@ throwMessage.innerHTML = "Throw!";
 setTimeout(transmit, 2000);
     
 var frame;
-
-var fieldLeap = document.getElementById("field");
     
 //new leap motion controller
 var controller = new Leap.Controller({ enableGestures: true });
@@ -52,13 +50,8 @@ var controller = new Leap.Controller({ enableGestures: true });
 				console.log(frame.hands);
 				//console.log(xPos);
 				
-				fieldLeap.value = frame
-				
 				/////////////////
 				var hand1 = document.getElementById("hand1");
-				//var rock = document.getElementsByClassName("rock");
-				//var paper = document.getElementsByClassName("paper");
-				//var scissors = document.getElementsByClassName("scissors");
 						
 				if (frame.fingers.length == 2) {
 					console.log("scissors");
