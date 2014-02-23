@@ -1,0 +1,176 @@
+    <!DOCTYPE html>
+    <!--
+    /------------------------------------------------------------------------------\
+    | Copyright (C) 2012-2013 Leap Motion, Inc. All rights reserved.               |
+    | Leap Motion proprietary and confidential. Not for distribution.              |
+    | Use subject to the terms of the Leap Motion SDK Agreement available at       |
+    | https://developer.leapmotion.com/sdk_agreement, or another agreement         |
+    | between Leap Motion and you, your company or other organization.             |
+    \------------------------------------------------------------------------------/
+    -->
+    <html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Leap Motion JavaScript Sample</title>
+    <script src="http://js.leapmotion.com/0.2.0/leap.min.js"></script>
+    <script>
+    // Store frame for motion functions
+    var previousFrame = null;
+    var paused = false;
+    var pauseOnGesture = false;
+    // Setup Leap loop with frame callback function
+    var controllerOptions = {enableGestures: true};
+    Leap.loop(controllerOptions, function(frame) {
+      if (paused) {
+        return; // Skip this update
+      }
+      // Display Frame object data
+      var frameOutput = document.getElementById("frameData");
+      var frameString = "Frame ID: " + frame.id  + "<br />"
+                      + "Timestamp: " + frame.timestamp + " &micro;s<br />"
+                      + "Hands: " + frame.hands.length + "<br />"
+                      + "Fingers: " + frame.fingers.length + "<br />"
+                      + "Tools: " + frame.tools.length + "<br />"
+                      + "Gestures: " + frame.gestures.length + "<br />";
+      frameOutput.innerHTML = "<div style='width:300px; float:left; padding:5px'>" + frameString + "</div>";
+     
+      // Display Gesture object data
+      var gestureOutput = document.getElementById("gestureData");
+      var gestureString = "";
+      if (frame.hands.length > 0) {
+        if (pauseOnGesture) {
+          togglePause();
+          var output = document.getElementById("output").innerHTML = frame.fingers.length;
+        }
+        for (var i = 0; i < frame.gestures.length; i++) {
+          var gesture = frame.gestures[i];
+          gestureString += "Gesture ID: " + gesture.id + ", "
+                        + "type: " + gesture.type + ", "
+                        + "state: " + gesture.state + ", "
+                        + "hand IDs: " + gesture.handIds.join(", ") + ", "
+                        + "pointable IDs: " + gesture.pointableIds.join(", ") + ", "
+                        + "duration: " + gesture.duration + " &micro;s, ";
+        }
+      }
+      else {
+        gestureString += "No gestures";
+      }
+      gestureOutput.innerHTML = gestureString;
+      
+      // Store frame for motion functions
+      previousFrame = frame;
+      
+      var rock = frame.fingers.length == 0;
+       var paper = frame.fingers.length == 5;
+        var scissors = frame.fingers.length == 2;
+      
+      
+        if (output == 0) {
+            //console.log("rock");
+            var player1 = "rock";
+                    console.log(player1 + "this is rock");
+        } else if(output > 1 && output <= 3) {
+            //console.log("scissors");
+            var player1 = "scissors";
+                    console.log(player1 + "this is scissors");
+        } else if (output >=4) {
+            //console.log("paper");
+            var player1 = "paper";
+            console.log(player1 + "this is paper" );
+        }
+      
+        
+        
+        var player2 = "scissors";
+        
+    if (player1 == "scissors" && player2 == "scissors"){
+        console.log("Tie");
+    } else if (player1 =="scissors" && player2 == "rock"){
+        console.log("Lose");
+    } else if (player1 =="scissors" && player2 == "paper"){
+        console.log("Win");
+    } else if (player1 =="rock" && player2 == "rock"){
+        console.log("tie");
+    } else if (player1 =="rock" && player2 == "scissors"){
+        console.log("win");
+    } else if (player1 =="rock" && player2 == "paper"){
+        console.log("lose");
+    } else if (player1 =="paper" && player2 == "paper"){
+        console.log("tie");
+    } else if (player1 =="paper" && player2 == "rock"){
+        console.log("win");
+    } else if (player1 =="paper" && player2 == "scissors"){
+        console.log("lose");
+    }
+        
+        
+        
+      
+    })
+    var my_controller = new Leap.Controller({enableGestures: true});
+      my_controller.on('connect', function(){
+        setInterval(function(){
+          var frame = my_controller.frame();
+        }, 500);
+      });
+      my_controller.connect();
+      console.log(my_controller);
+      
+    function vectorToString(vector, digits) {
+      if (typeof digits === "undefined") {
+        digits = 1;
+      }
+      return "(" + vector[0].toFixed(digits) + ", "
+                 + vector[1].toFixed(digits) + ", "
+                 + vector[2].toFixed(digits) + ")";
+    }
+    // OHHHHHH RIGHTT HEREEEEEE
+    // -----------------------------------------
+    function togglePause() {
+      paused = !paused;
+      if (paused) {
+        document.getElementById("pause").innerText = "Resume";
+            console.log("resume");
+      } else {
+        document.getElementById("pause").innerText = "Pause";
+        console.log("paused");
+      }
+    }
+    
+    function pauseForGestures() {
+      if (document.getElementById("pauseOnGesture")) {
+        pauseOnGesture = true;
+      } else {
+        pauseOnGesture = false;
+      }
+    }
+    var myVar;
+    function myFunction()
+    {
+    myVar=setTimeout(function(){console.log("Hello")},3000);
+    }
+    clearTimeout(myVar);
+    </script>
+    </head>
+    <body>
+    <h1>Leap Motion JavaScript Sample</h1>
+    <div id="output"></div>
+    <div id="main">
+      <button id="pause" onclick="togglePause()">Pause</button>
+      
+      <button id="pauseOnGesture" onclick="pauseForGestures()"> START </button>
+      
+      
+      
+      <h3>Frame data:</h3>
+      <div id="frameData"></div>
+      <div style="clear:both;"></div>
+      <h3>Gesture data:</h3>
+      <div id="gestureData"></div>
+      
+      <button onclick="myFunction()">Try it</button>
+      
+      
+    </div>
+    </body>
+    </html>
