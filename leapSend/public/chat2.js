@@ -64,8 +64,8 @@ var controller = new Leap.Controller({ enableGestures: true });
        		} 
        		else 
        		{
-       			sessionCompare[userID] = frame;
-            console.log("There is a problem:", sessionCompare);
+       			//sessionCompare[userID] = frame;
+            console.log("There is a problem:", userID);
         	}
     	});
     sendButton.onclick = function() {
