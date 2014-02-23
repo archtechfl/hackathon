@@ -51,7 +51,7 @@ window.onload = function() {
       else {
         gestureString += "No gestures";
       }
-      gestureOutput.innerHTML = gestureString;
+      //gestureOutput.innerHTML = gestureString;
       
       // Store frame for motion functions
       previousFrame = frame;
