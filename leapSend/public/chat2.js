@@ -9,7 +9,9 @@ window.onload = function() {
     function splashScreen() {
     	
     	var splashScreen = document.createElement ('img');
-    	splashScreen.class = "splash";
+    	splashScreen.class = "splash
+    	splashScreen.src = "splash-01.png";
+    	document.body.appendChild(splashScreen);
     	
     }
     
