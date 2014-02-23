@@ -6,7 +6,7 @@ window.onload = function() {
     
     var leapValue = '';
     
-    var quit = true;
+    var quit = false;
     
     //graphic screens/splash
     var loseScreen=document.createElement('img');
@@ -138,6 +138,8 @@ var controller = new Leap.Controller({ enableGestures: true });
         console.log(sessionCompare);
         
 	setTimeout (compare, 3000);
+	
+	quit = true;
         
     };
     
