@@ -154,6 +154,26 @@ var controller = new Leap.Controller({ enableGestures: true });
     		var result1 = messages[0];
         	var result2 = messages[1];
                 console.log ("Result one: " + result1 + " result 2: " + result2);
+                
+                if (result1 == 'scissors' && result2 == 'rock'){
+                	console.log("Player 2 wins! Rock beats scissors");
+                } else if (result1 == 'scissors' && result2 == 'paper'){
+                	console.log("Player 1 wins! Scissors beats paper");
+                } else if (result1 == 'scissors' && result2 == 'scissors'){
+                	console.log("Tie!");
+                } else if (result1 == 'paper' && result2 == 'scissors'){
+                	console.log("Player 2: scissors wins!");
+                } else if (result1 == 'paper' && result2 == 'rock'){
+                	console.log("Player 1: paper wins!");
+                } else if (result1 == 'paper' && result2 == 'paper'){
+                	console.log("Tie!");
+                } else if (result1 == 'rock' && result2 == 'paper'){
+                	console.log("Player 2: paper wins!");
+                } else if (result1 == 'rock' && result2 == 'scissors'){
+                	console.log("player 1: rock wins!");
+                } else {
+                	console.log("Tie!");
+                }
     	
     }
     
