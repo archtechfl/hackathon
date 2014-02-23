@@ -18,10 +18,6 @@ var fieldLeap = document.getElementById("field");
 //new leap motion controller
 var controller = new Leap.Controller({ enableGestures: true });
 	
-	//render cube, 48 frames per second
-	
-	//setInterval(render, (1000/48));
-	
 	//Leap collecting loop
 
     	controller.on( 'frame' , function( data )
@@ -33,21 +29,50 @@ var controller = new Leap.Controller({ enableGestures: true });
 	  
 	  		//Cycle through coordinates of finger tip
 	  		for(var index = 0; index < frame.pointables.length; index++)
-	  			{
+	  		
+	  		{
 	 
-			var pointable = frame.pointables[index];
-			
-			//Conver tip position to cube position
-			xPos = pointable.tipPosition[0];
-			
-			console.log(frame.hands);
-			//console.log(xPos);
-			
-			fieldLeap.value = frame;
+				var pointable = frame.pointables[index];
+				
+				//Conver tip position to cube position
+				xPos = pointable.tipPosition[0];
+					
+				console.log(frame.hands);
+				//console.log(xPos);
+				
+				fieldLeap.value = frame
+				
+				/////////////////
+				var hand1 = document.getElementById("hand1");
+				//var rock = document.getElementsByClassName("rock");
+				//var paper = document.getElementsByClassName("paper");
+				//var scissors = document.getElementsByClassName("scissors");
+						
+				if (frame.fingers.length == 2) {
+					console.log("scissors");
+					hand1.className="scissors";
+							
+				} else if (frame.fingers.length == 5) {
+					console.log("paper");
+					hand1.className="paper";
+				
+				} else if (frame.fingers.length == 0 && frame.hands.length == 1) {
+					console.log("rock");
+					hand1.className="rock";
+				
+				} else if (frame.hands.length == 0){
+					console.log("where did you go? please don't leave me!");
+				} else if (frame.hands.length == 2) {
+					console.log("MORTAL KOMBAT");
+					hand1.className="mortalKombat";
+				} else if (frame.hands.length == 3) {
+					hand1.className="hollander";
+				}	
+				/////////////////
 
-		  }
+			  }//end of for loop
 
-    });
+    });//end of controller
 
     controller.connect();
 
