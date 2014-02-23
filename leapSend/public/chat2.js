@@ -20,13 +20,16 @@ var controller = new Leap.Controller({ enableGestures: true });
 	
 	//Leap collecting loop
 
-    	controller.on( 'frame' , function( data ){
+    	controller.on( 'frame' , function( data )
+    	
+    	{
       
       		//Capture data
       		frame = data;
 	  
-	  	//Cycle through coordinates of finger tip
-	  	for(var index = 0; index < frame.pointables.length; index++){
+	  		//Cycle through coordinates of finger tip
+	  		for(var index = 0; index < frame.pointables.length; index++)
+	  			{
 	 
 			var pointable = frame.pointables[index];
 			
@@ -42,25 +45,28 @@ var controller = new Leap.Controller({ enableGestures: true });
     });
 
     controller.connect();
-    
-}
 
 //end leap controller
  
     socket.on('message', function (data) {
-        if(data.message) {
+        if(data.message) 
+        	{
             messages.push(data.message);
             var html = '';
-            for(var i=0; i<messages.length; i++) {
+            for(var i=0; i<messages.length; i++) 
+            	{
                 html += messages[i] + '<br />';
-            }
+           		}
             content.innerHTML = html;
-        } else {
+       		} 
+       		else 
+       		{
             console.log("There is a problem:", data);
-        }
-    });
+        	}
+    	});
     sendButton.onclick = function() {
         var text = field.value;
         socket.emit('send', { message: text });
     };
+    
 }
