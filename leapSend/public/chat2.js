@@ -60,9 +60,22 @@ var controller = new Leap.Controller({ enableGestures: true });
             	{
                 html += messages[i] + '<br />';
                 
+                /*
                 var result1 = messages[0];
                 var result2 = messages[1];
                 console.log (result1 + " " + result2);
+                */
+                
+                //Number example
+                var result1 = parseInt(messages[0]);
+                var result2 = parseInt(messages[1]);
+                console.log (result1 + " " + result2);
+                
+                if (result1 > result2) {
+                	console.log("wooooooooooooooooooo!");
+                } else {
+                	console.log("booooooooooooooooooo!");
+                }
                 
                 /*
                 console.log(messages[i]);
