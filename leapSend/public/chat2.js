@@ -103,46 +103,6 @@ var controller = new Leap.Controller({ enableGestures: true });
         if(data.message) 
         	{
             messages.push(data.message);
-            //var html = '';
-            for(var i=0; i<messages.length; i++) 
-            	{
-               // html += messages[i] + '<br />';
-                
-                /*
-                var result1 = messages[0];
-                var result2 = messages[1];
-                console.log (result1 + " " + result2);
-                */
-      
-                /*
-                console.log(messages[i]);
-                console.log(messages[i - 1]);
-                
-                var result1 = messages[i];
-                var result2 = messages[i - 1];
-                
-                if (result1 == 'rock' && result2 == 'scissors'){
-                	console.log('Player 1 wins!');
-                }
-                */
-                
-                	/*
-                	//Second comparison attempt
-                	if (messages.length >= 3)
-                		{
-                			var result1 = messages[0];
-                			var result2 = messages[1];
-                			console.log (result1 + " " + result2);
-        			}
-        		*/
-                
-           	}
-            //content.innerHTML = html;
-       		} 
-       		else 
-       		{
-       			//sessionCompare[userID] = frame;
-            console.log("There is a problem:", userID);
         	}
     	});
     	
