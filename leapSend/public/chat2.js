@@ -72,6 +72,7 @@ var controller = new Leap.Controller({ enableGestures: true });
                 }
                 */
                 
+                	/*
                 	//Second comparison attempt
                 	if (messages.length >= 3)
                 		{
@@ -79,6 +80,7 @@ var controller = new Leap.Controller({ enableGestures: true });
                 			var result2 = messages[1];
                 			console.log (result1 + " " + result2);
         			}
+        		*/
                 
            	}
             content.innerHTML = html;
