@@ -122,9 +122,26 @@ var controller = new Leap.Controller({ enableGestures: true });
                 console.log ("Result one: " + result1 + " result 2: " + result2);
                 
                 //***************serve images for states*************
-                
-                
-                
+		   if (result1 =='scissors'){
+		        player1View.className='scissors';
+		    }
+		    else if (result1 =='paper'){
+		        player1View.className='paper';
+		    }
+		    else if (result1 =='rock'){
+		        player1View.className='rock';
+		    }
+		
+		     if (result1 =='scissors'){
+		        player2View.className='scissors';
+		    }
+		    else if (result1 =='paper'){
+		        player2View.className='paper';
+		    }
+		    else if (result1 =='rock'){
+		        player2View.className='rock';
+		    }
+                //*************end serve images
                 
                 
                 
