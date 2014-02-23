@@ -10,8 +10,14 @@ window.onload = function() {
     var loseScreen=document.createElement('img');
     loseScreen.setAttribute("id", "lost");
     
-    var winScreen;
-    var tieScreen;
+    var loseScreen=document.createElement('img');
+    loseScreen.setAttribute("id", "lost");
+    
+    var winScreen=document.createElement('img');
+    winScreen.setAttribute("id","win");
+
+    var tieScreen = document.createElement('img');
+    tieScreen.setAttribute("id","tie");
     
     
     function splashScreen() {
