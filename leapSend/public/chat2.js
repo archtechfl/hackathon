@@ -44,7 +44,7 @@ window.onload = function() {
     	setTimeout(throwIT, 4000);
     }
     
-    throwPrepare();
+    //throwPrepare();
     
 //start leap
 
