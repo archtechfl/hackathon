@@ -6,10 +6,18 @@ window.onload = function() {
     
     var leapValue = '';
     
+    //graphic screens/splash
+    var loseScreen=document.createElement('img');
+    loseScreen.setAttribute('id')
+    
+    var winScreen;
+    var tieScreen;
+    
+    
     function splashScreen() {
     	
     	var splashScreen = document.createElement ('img');
-    	splashScreen.class = "splash";
+    	splashScreen.className = "splash";
     	splashScreen.src = "splash-01.png";
     	document.body.appendChild(splashScreen);
     	
