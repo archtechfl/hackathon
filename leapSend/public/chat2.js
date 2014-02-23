@@ -1,9 +1,6 @@
 window.onload = function() {
     var messages = [];
     var socket = io.connect('169.254.103.228:3700');
-    var field = document.getElementById("field");
-    var sendButton = document.getElementById("send");
-    var content = document.getElementById("content");
     
     var userID = '';
     
@@ -106,10 +103,10 @@ var controller = new Leap.Controller({ enableGestures: true });
         if(data.message) 
         	{
             messages.push(data.message);
-            var html = '';
+            //var html = '';
             for(var i=0; i<messages.length; i++) 
             	{
-                html += messages[i] + '<br />';
+               // html += messages[i] + '<br />';
                 
                 /*
                 var result1 = messages[0];
@@ -140,7 +137,7 @@ var controller = new Leap.Controller({ enableGestures: true });
         		*/
                 
            	}
-            content.innerHTML = html;
+            //content.innerHTML = html;
        		} 
        		else 
        		{
