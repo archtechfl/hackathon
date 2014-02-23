@@ -66,8 +66,9 @@ var controller = new Leap.Controller({ enableGestures: true });
         	}
     	});
     sendButton.onclick = function() {
-        var text = field.value;
-        socket.emit('send', { message: text });
+        var leapValue = field.value;
+        sessionCompare[userID] = leapValue;
+        socket.emit('send', { message: leapValue });
     };
     
     //Creating users and storing info
@@ -76,7 +77,8 @@ var controller = new Leap.Controller({ enableGestures: true });
     socket.on('connect', function () 
     	{
     	
-    		sessionCompare[this.socket.sessionid] = frame;
+    		var userID = this.socket.sessionid;
+    		sessionCompare[userID] = '';
     		//console.log(this.socket.sessionid);
     		
     		console.log(sessionCompare);
