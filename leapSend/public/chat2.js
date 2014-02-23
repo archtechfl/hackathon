@@ -115,15 +115,9 @@ var controller = new Leap.Controller({ enableGestures: true });
     
     function compare() {
     	
-    	var result1 = parseInt(messages[0]);
-        	var result2 = parseInt(messages[1]);
+    		var result1 = messages[0];
+        	var result2 = messages[1];
                 console.log (result1 + " " + result2);
-                
-                if (result1 > result2) {
-                	console.log("wooooooooooooooooooo!");
-                } else {
-                	console.log("booooooooooooooooooo!");
-                }
     	
     }
     
