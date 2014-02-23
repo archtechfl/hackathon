@@ -7,6 +7,8 @@ window.onload = function() {
     
     var userID = '';
     
+    setTimeout(transmit, 10000);
+    
 //start leap
     
     var frame;
@@ -65,18 +67,7 @@ var controller = new Leap.Controller({ enableGestures: true });
                 var result2 = messages[1];
                 console.log (result1 + " " + result2);
                 */
-                
-                //Number example
-                var result1 = parseInt(messages[0]);
-                var result2 = parseInt(messages[1]);
-                console.log (result1 + " " + result2);
-                
-                if (result1 > result2) {
-                	console.log("wooooooooooooooooooo!");
-                } else {
-                	console.log("booooooooooooooooooo!");
-                }
-                
+      
                 /*
                 console.log(messages[i]);
                 console.log(messages[i - 1]);
@@ -108,7 +99,8 @@ var controller = new Leap.Controller({ enableGestures: true });
             console.log("There is a problem:", userID);
         	}
     	});
-    sendButton.onclick = function() {
+    	
+    function transmit() {
         var leapValue = field.value;
         sessionCompare[userID] = leapValue;
         socket.emit('send', { message: leapValue });
@@ -116,7 +108,24 @@ var controller = new Leap.Controller({ enableGestures: true });
         console.log("Messages: " + messages);
         
         console.log(sessionCompare);
+        
+	setTimeout (compare, 3000);
+        
     };
+    
+    function compare() {
+    	
+    	var result1 = parseInt(messages[0]);
+        	var result2 = parseInt(messages[1]);
+                console.log (result1 + " " + result2);
+                
+                if (result1 > result2) {
+                	console.log("wooooooooooooooooooo!");
+                } else {
+                	console.log("booooooooooooooooooo!");
+                }
+    	
+    }
     
     //Creating users and storing info
     var sessionCompare = {};//holder
