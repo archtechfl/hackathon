@@ -174,46 +174,61 @@ var controller = new Leap.Controller({ enableGestures: true });
 		        player1View.className='scissors';
 		        player2View.className='scissors';
 		        displayResult.innerHTML = 'Tie!';
+		        document.body.appendChild(tieScreen);
 		    }
 		    else if (result1 =='rock' && result2 =='rock'){
 		        player1View.className='rock';
 		        player2View.className='rock';
 		        displayResult.innerHTML = 'Tie!';
+		        document.body.appendChild(tieScreen);
 		    }
 		    else if (result1 =='paper' && result2 =='paper'){
 		        player1View.className='paper';
 		        player2View.className='paper';
 		        displayResult.innerHTML = 'Tie!';
+		        document.body.appendChild(tieScreen);
 		    } 
 		    else if (result1 =='paper' && result2 =='scissors'){
 		        player1View.className='paper';
 		        player2View.className='scissors';
 		        displayResult.innerHTML = 'Player 2 wins!';
+		        document.getElementById('player2View').appendChild(winScreen);
+		        document.getElementById('player1View').appendChild(loseScreen);
 		    }
 		    else if (result1 =='paper' && result2 =='rock'){
 		        player1View.className='paper';
 		        player2View.className='rock';
 		        displayResult.innerHTML = 'Player 1 wins!';
+		        document.getElementById('player1View').appendChild(winScreen);
+		        document.getElementById('player2View').appendChild(loseScreen);
 		    }
 		    else if (result1 =='rock' && result2 =='paper'){
 		        player1View.className='rock';
 		        player2View.className='paper';
 		        displayResult.innerHTML = 'Player 2 wins!';
+		        document.getElementById('player2View').appendChild(winScreen);
+		        document.getElementById('player1View').appendChild(loseScreen);
 		    }
 		    else if (result1 =='rock' && result2 =='scissors'){
 		        player1View.className='rock';
 		        player2View.className='scissors';
 		        displayResult.innerHTML = 'Player 1 wins!';
+		        document.getElementById('player1View').appendChild(winScreen);
+		        document.getElementById('player2View').appendChild(loseScreen);
 		    }
 		    else if (result1 =='scissors' && result2 =='rock'){
 		        player1View.className='scissors';
 		        player2View.className='rock';
 		        displayResult.innerHTML = 'Player 2 wins!';
+		        document.getElementById('player2View').appendChild(winScreen);
+		        document.getElementById('player1View').appendChild(loseScreen);
 		    }
 		    else if (result1 =='scissors' && result2 =='paper'){
 		        player1View.className='scissors';
 		        player2View.className='paper';
 		        displayResult.innerHTML = 'Player 1 Wins!';
+		        document.getElementById('player1View').appendChild(winScreen);
+		        document.getElementById('player2View').appendChild(loseScreen);
 		    } else {
 		    	console.log("Error");
 		    }
