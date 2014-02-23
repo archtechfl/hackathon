@@ -64,7 +64,7 @@ var controller = new Leap.Controller({ enableGestures: true });
        		} 
        		else 
        		{
-            console.log("There is a problem:", data);
+            console.log("There is a problem:", frame);
         	}
     	});
     sendButton.onclick = function() {
