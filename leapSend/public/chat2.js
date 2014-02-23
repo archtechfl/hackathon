@@ -60,8 +60,16 @@ var controller = new Leap.Controller({ enableGestures: true });
             	{
                 html += messages[i] + '<br />';
                 
+                
                 console.log(messages[i]);
                 console.log(messages[i - 1]);
+                
+                var result1 = messages[i];
+                var result2 = messages[i - 1];
+                
+                if (result1 = 'rock' && result2 = 'scissors'){
+                	console.log('Player 1 wins!');
+                }
                 
            		}
             content.innerHTML = html;
