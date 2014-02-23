@@ -59,9 +59,11 @@
 		
 		/* End of game screens */
 		#tie{
-			position: absolute;
-			left: 5%;
-			top: 2px;
+			position:absolute;
+			left:20%;
+			top:10px;
+			width:600px;
+			height:600px;
 			opacity: .6;	
 		}
 		
