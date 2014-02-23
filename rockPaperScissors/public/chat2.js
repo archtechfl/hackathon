@@ -55,7 +55,7 @@ function throwIT(){
 var throwMessage = document.getElementById("throw");
 throwMessage.innerHTML = "Throw!";	
 	
-//setTimeout(transmit, 1650);
+setTimeout(transmit, 1650);
     
 var frame;
     
@@ -111,8 +111,6 @@ var controller = new Leap.Controller({ enableGestures: true });
 					console.log("no valid gesture")
 				}	
 				
-				transmit();
-				
 				/////////////////
 
 			  }//end of for loop
@@ -141,7 +139,7 @@ var controller = new Leap.Controller({ enableGestures: true });
         
         console.log(sessionCompare);
         
-	setTimeout (compare, 3000);
+	setTimeout (compare, 2000);
 	
 	quit = true;
         
