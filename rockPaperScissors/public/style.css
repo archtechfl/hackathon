@@ -65,14 +65,14 @@
 		
 		#win{
 			position:relative;
-			top:250px;
+			top:200px;
 			width:250px;
 			height:250px;
 		}
 		
 		#loss{
 			position:relative;
-			top:250px;
+			top:200px;
 			width:250px;
 			height:250px;
 		}
