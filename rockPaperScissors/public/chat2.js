@@ -170,25 +170,45 @@ var controller = new Leap.Controller({ enableGestures: true });
                 console.log ("Result one: " + result1 + " result 2: " + result2);
                 
                 //***************serve images for states*************
-		   if (result1 =='scissors'){
+		    if (result1 =='scissors' && result2 =='scissors'){
 		        player1View.className='scissors';
-		    }
-		    else if (result1 =='paper'){
-		        player1View.className='paper';
-		    }
-		    else if (result1 =='rock'){
-		        player1View.className='rock';
-		    }
-		
-		    if (result2 =='scissors'){
 		        player2View.className='scissors';
 		    }
-		    else if (result2 =='paper'){
-		        player2View.className='paper';
-		    }
-		    else if (result2 =='rock'){
+		    else if (result1 =='rock' && result2 =='rock'){
+		        player1View.className='rock';
 		        player2View.className='rock';
 		    }
+		    else if (result1 =='paper' && result2 =='paper'){
+		        player1View.className='paper';
+		        player2View.className='paper';
+		    } 
+		    else if (result1 =='paper' && result2 =='scissors'){
+		        player1View.className='paper';
+		        player2View.className='scissors';
+		    }
+		    else if (result1 =='paper' && result2 =='rock'){
+		        player1View.className='paper';
+		        player2View.className='rock';
+		    }
+		    else if (result1 =='rock' && result2 =='paper'){
+		        player1View.className='rock';
+		        player2View.className='paper';
+		    }
+		    else if (result1 =='rock' && result2 =='scissors'){
+		        player1View.className='rock';
+		        player2View.className='scissors';
+		    }
+		    else if (result1 =='scissors' && result2 =='rock'){
+		        player1View.className='scissors';
+		        player2View.className='rock';
+		    }
+		    else if (result1 =='scissors' && result2 =='paper'){
+		        player1View.className='scissors';
+		        player2View.className='paper';
+		    } else {
+		    	console.log("Error");
+		    }
+
                 //*************end serve images
                 
                 
