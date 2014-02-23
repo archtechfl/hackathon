@@ -1,4 +1,4 @@
-.rock {
+		.rock {
 			display: inline-block;
 			width: 500px;
 			height: 500px;
@@ -47,4 +47,10 @@
 			color:#000;
 			height:100px;
 			width:1000px;
+		}
+		
+		.splash {
+			position:absolute;
+			left:20%
+			top:10%;
 		}
