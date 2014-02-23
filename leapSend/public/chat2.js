@@ -67,21 +67,7 @@ var controller = new Leap.Controller({ enableGestures: true });
                 var result2 = messages[1];
                 console.log (result1 + " " + result2);
                 */
-                
-                //Number example
-                
-                if (i == 1){
-                var result1 = parseInt(messages[0]);
-                var result2 = parseInt(messages[1]);
-                console.log (result1 + " " + result2);
-                
-                if (result1 > result2) {
-                	console.log("wooooooooooooooooooo!");
-                } else {
-                	console.log("booooooooooooooooooo!");
-                }
-                }//end of i == 2
-                
+      
                 /*
                 console.log(messages[i]);
                 console.log(messages[i - 1]);
@@ -122,6 +108,17 @@ var controller = new Leap.Controller({ enableGestures: true });
         console.log("Messages: " + messages);
         
         console.log(sessionCompare);
+        
+		var result1 = parseInt(messages[0]);
+        	var result2 = parseInt(messages[1]);
+                console.log (result1 + " " + result2);
+                
+                if (result1 > result2) {
+                	console.log("wooooooooooooooooooo!");
+                } else {
+                	console.log("booooooooooooooooooo!");
+                }
+        
     };
     
     //Creating users and storing info
