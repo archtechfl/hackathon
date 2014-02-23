@@ -15,6 +15,8 @@ window.onload = function() {
     	
     }
     
+    splashScreen();
+    
     function throwPrepare(){
     	var throwMessage = document.getElementById("throw");
     	throwMessage.innerHTML = "Prepare to throw";
