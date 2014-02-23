@@ -1,4 +1,5 @@
 window.onload = function() {
+	
     var messages = [];
     var socket = io.connect('169.254.103.228:3700');
     var field = document.getElementById("field");
@@ -14,9 +15,11 @@ window.onload = function() {
     // Setup Leap loop with frame callback function
     var controllerOptions = {enableGestures: true};
     Leap.loop(controllerOptions, function(frame) {
-      if (paused) {
-        return; // Skip this update
-      }
+    	
+      if (paused) 
+      	{
+		 return; // Skip this update
+	}
       // Display Frame object data
       var frameOutput = document.getElementById("frameData");
       var frameString = "Frame ID: " + frame.id  + "<br />"
@@ -60,6 +63,7 @@ window.onload = function() {
        var paper = frame.fingers.length == 5;
         var scissors = frame.fingers.length == 2;
       
+      var output = frame.fingers.length;
       
         if (output == 0) {
             //console.log("rock");
