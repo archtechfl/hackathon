@@ -5,6 +5,8 @@ window.onload = function() {
     var sendButton = document.getElementById("send");
     var content = document.getElementById("content");
     
+    var userID = '';
+    
 //start leap
     
     var frame;
@@ -77,7 +79,7 @@ var controller = new Leap.Controller({ enableGestures: true });
     socket.on('connect', function () 
     	{
     	
-    		var userID = this.socket.sessionid;
+    		userID = this.socket.sessionid;
     		sessionCompare[userID] = '';
     		//console.log(this.socket.sessionid);
     		
