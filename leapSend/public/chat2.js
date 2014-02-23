@@ -10,6 +10,8 @@ window.onload = function() {
     var frame;
 
 var fieldLeap = document.getElementById("field");
+
+var fist = '';
     
 //new leap motion controller
 var controller = new Leap.Controller({ enableGestures: true });
@@ -37,9 +39,15 @@ var controller = new Leap.Controller({ enableGestures: true });
 			xPos = pointable.tipPosition[0];
 			
 			console.log(frame.hands);
+			
+			if (frame.hands.length < 1){
+				fist = 'rock';
+			} else {
+				fist = 'no rock';
+			}
 			//console.log(xPos);
 			
-			fieldLeap.value = frame;
+			fieldLeap.value = fist;
 
 		  }
 
@@ -50,6 +58,7 @@ var controller = new Leap.Controller({ enableGestures: true });
 //end leap controller
  
     socket.on('message', function (data) {
+    	//console.log(socket.id);
         if(data.message) 
         	{
             messages.push(data.message);
