@@ -71,8 +71,8 @@ var controller = new Leap.Controller({ enableGestures: true });
     };
     var sessionCompare = {};
     io.on('connect', function () 
-    {
-    console.log(this.socket.sessionid);
-    });
+    	{
+    		console.log(this.socket.sessionid);
+    	});
     
 }
