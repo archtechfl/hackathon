@@ -7,6 +7,8 @@ window.onload = function() {
     
     var userID = '';
     
+    var leapValue = '';
+    
     setTimeout(transmit, 10000);
     
 //start leap
@@ -51,22 +53,31 @@ var controller = new Leap.Controller({ enableGestures: true });
 				if (frame.fingers.length == 2) {
 					console.log("scissors");
 					hand1.className="scissors";
+					leapValue = 'scissors';
 							
 				} else if (frame.fingers.length == 5) {
 					console.log("paper");
 					hand1.className="paper";
+					leapValue = 'paper';
 				
 				} else if (frame.fingers.length == 0 && frame.hands.length == 1) {
 					console.log("rock");
 					hand1.className="rock";
+					leapValue = 'rock';
 				
 				} else if (frame.hands.length == 0){
 					console.log("where did you go? please don't leave me!");
+					leapValue = 'wheredidyougo?';
+					
 				} else if (frame.hands.length == 2) {
 					console.log("MORTAL KOMBAT");
 					hand1.className="mortalKombat";
+					leapValue = 'mortalKombat';
+					
 				} else if (frame.hands.length == 3) {
 					hand1.className="hollander";
+					leapValue = 'hollander';
+					
 				}	
 				/////////////////
 
@@ -126,7 +137,7 @@ var controller = new Leap.Controller({ enableGestures: true });
     	});
     	
     function transmit() {
-        var leapValue = field.value;
+        //var leapValue = field.value;
         sessionCompare[userID] = leapValue;
         socket.emit('send', { message: leapValue });
         
