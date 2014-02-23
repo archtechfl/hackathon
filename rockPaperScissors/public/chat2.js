@@ -10,10 +10,7 @@ window.onload = function() {
     
     //graphic screens/splash
     var loseScreen=document.createElement('img');
-    loseScreen.setAttribute("id", "lost");
-    
-    var loseScreen=document.createElement('img');
-    loseScreen.setAttribute("id", "lost");
+    loseScreen.setAttribute("id", "loss");
     
     var winScreen=document.createElement('img');
     winScreen.setAttribute("id","win");
@@ -170,6 +167,7 @@ var controller = new Leap.Controller({ enableGestures: true });
                 console.log ("Result one: " + result1 + " result 2: " + result2);
                 
                 var displayResult = document.getElementById("throw");
+                
                 
                 //***************serve images for states*************
 		    if (result1 =='scissors' && result2 =='scissors'){
