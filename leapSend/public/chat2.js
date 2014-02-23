@@ -18,14 +18,21 @@ window.onload = function() {
     	
     	var splashScreen = document.createElement ('img');
     	splashScreen.className = "splash";
+    	splashScreen.setAttribute = ("id", "splashOne");
     	splashScreen.src = "splash-01.png";
     	document.body.appendChild(splashScreen);
+    	
+    	splashScreen.addEventListener("click", throwPrepare, false);
     	
     }
     
     splashScreen();
     
-    function throwPrepare(){
+    function throwPrepare(event){
+    	
+    	var splashImage = document.getElementById("splashOne");
+    	document.body.appendChild(splashImage);
+    	
     	var throwMessage = document.getElementById("throw");
     	throwMessage.innerHTML = "Prepare to throw";
     	setTimeout(throwIT, 4000);
