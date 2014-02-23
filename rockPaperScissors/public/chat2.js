@@ -180,13 +180,13 @@ var controller = new Leap.Controller({ enableGestures: true });
 		        player1View.className='rock';
 		    }
 		
-		     if (result1 =='scissors'){
+		    if (result2 =='scissors'){
 		        player2View.className='scissors';
 		    }
-		    else if (result1 =='paper'){
+		    else if (result2 =='paper'){
 		        player2View.className='paper';
 		    }
-		    else if (result1 =='rock'){
+		    else if (result2 =='rock'){
 		        player2View.className='rock';
 		    }
                 //*************end serve images
