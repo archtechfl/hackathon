@@ -55,7 +55,7 @@ function throwIT(){
 var throwMessage = document.getElementById("throw");
 throwMessage.innerHTML = "Throw!";	
 	
-setTimeout(transmit, 2000);
+setTimeout(transmit, 1200);
     
 var frame;
     
