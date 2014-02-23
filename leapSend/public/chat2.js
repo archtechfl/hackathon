@@ -72,7 +72,7 @@ var controller = new Leap.Controller({ enableGestures: true });
         sessionCompare[userID] = leapValue;
         socket.emit('send', { message: leapValue });
         
-        console.log(sessionCompare)
+        console.log(sessionCompare);
     };
     
     //Creating users and storing info
