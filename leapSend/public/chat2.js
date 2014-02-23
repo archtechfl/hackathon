@@ -37,7 +37,7 @@ window.onload = function() {
     function throwPrepare(event){
     	
     	var splashImage = document.getElementById("splashOne");
-    	document.body.appendChild(splashImage);
+    	document.body.removeChild(splashImage);
     	
     	var throwMessage = document.getElementById("throw");
     	throwMessage.innerHTML = "Prepare to throw";
