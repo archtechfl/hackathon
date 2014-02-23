@@ -36,14 +36,6 @@ var controller = new Leap.Controller({ enableGestures: true });
 			//Conver tip position to cube position
 			xPos = pointable.tipPosition[0];
 			
-			if (frame.fingers.length <= 1){
-				fist = 'rock';
-			} else if (frame.fingers.length == 2) {
-				fist = 'scissors';
-			} else {
-				fist = 'paper';
-			}
-			
 			console.log(frame.hands);
 			//console.log(xPos);
 			
@@ -77,10 +69,10 @@ var controller = new Leap.Controller({ enableGestures: true });
         var text = field.value;
         socket.emit('send', { message: text });
     };
-    
-    socket.on('connect', function () 
-    	{
-    		console.log(this.socket.sessionid);
-    	});
+    var sessionCompare = {};
+    io.on('connect', function () 
+    {
+    console.log(this.socket.sessionid);
+    });
     
 }
