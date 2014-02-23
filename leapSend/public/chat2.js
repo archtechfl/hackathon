@@ -67,7 +67,7 @@ var controller = new Leap.Controller({ enableGestures: true });
                 var result1 = messages[i];
                 var result2 = messages[i - 1];
                 
-                if (result1 = 'rock' && result2 = 'scissors'){
+                if (result1 == 'rock' && result2 == 'scissors'){
                 	console.log('Player 1 wins!');
                 }
                 
