@@ -60,7 +60,7 @@ var controller = new Leap.Controller({ enableGestures: true });
             	{
                 html += messages[i] + '<br />';
                 
-                
+                /*
                 console.log(messages[i]);
                 console.log(messages[i - 1]);
                 
@@ -70,6 +70,7 @@ var controller = new Leap.Controller({ enableGestures: true });
                 if (result1 == 'rock' && result2 == 'scissors'){
                 	console.log('Player 1 wins!');
                 }
+                */
                 
            		}
             content.innerHTML = html;
