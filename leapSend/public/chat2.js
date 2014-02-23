@@ -9,11 +9,24 @@ window.onload = function() {
     
     var leapValue = '';
     
-    setTimeout(transmit, 10000);
+    function throwPrepare(){
+    	var throwMessage = document.getElementById("throw");
+    	throwMessage.innerHTML = "Prepare to throw";
+    	setTimeout(throw, 4000);
+    }
+    
+    throwPrepare();
     
 //start leap
+
+function throw(){
+	
+var throwMessage = document.getElementById("throw");
+throwMessage.innerHTML = "Throw!";	
+	
+setTimeout(transmit, 2000);
     
-    var frame;
+var frame;
 
 var fieldLeap = document.getElementById("field");
     
@@ -135,6 +148,8 @@ var controller = new Leap.Controller({ enableGestures: true });
             console.log("There is a problem:", userID);
         	}
     	});
+    	
+}//end of throw
     	
     function transmit() {
         //var leapValue = field.value;
