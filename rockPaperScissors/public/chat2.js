@@ -169,42 +169,53 @@ var controller = new Leap.Controller({ enableGestures: true });
         	console.log(messages);
                 console.log ("Result one: " + result1 + " result 2: " + result2);
                 
+                var displayResult = document.getElementById("throw");
+                
                 //***************serve images for states*************
 		    if (result1 =='scissors' && result2 =='scissors'){
 		        player1View.className='scissors';
 		        player2View.className='scissors';
+		        displayResult.innerHTML = 'Tie!';
 		    }
 		    else if (result1 =='rock' && result2 =='rock'){
 		        player1View.className='rock';
 		        player2View.className='rock';
+		        displayResult.innerHTML = 'Tie!';
 		    }
 		    else if (result1 =='paper' && result2 =='paper'){
 		        player1View.className='paper';
 		        player2View.className='paper';
+		        displayResult.innerHTML = 'Tie!';
 		    } 
 		    else if (result1 =='paper' && result2 =='scissors'){
 		        player1View.className='paper';
 		        player2View.className='scissors';
+		        displayResult.innerHTML = 'Player 2 wins!';
 		    }
 		    else if (result1 =='paper' && result2 =='rock'){
 		        player1View.className='paper';
 		        player2View.className='rock';
+		        displayResult.innerHTML = 'Player 1 wins!';
 		    }
 		    else if (result1 =='rock' && result2 =='paper'){
 		        player1View.className='rock';
 		        player2View.className='paper';
+		        displayResult.innerHTML = 'Player 2 wins!';
 		    }
 		    else if (result1 =='rock' && result2 =='scissors'){
 		        player1View.className='rock';
 		        player2View.className='scissors';
+		        displayResult.innerHTML = 'Player 1 wins!';
 		    }
 		    else if (result1 =='scissors' && result2 =='rock'){
 		        player1View.className='scissors';
 		        player2View.className='rock';
+		        displayResult.innerHTML = 'Player 2 wins!';
 		    }
 		    else if (result1 =='scissors' && result2 =='paper'){
 		        player1View.className='scissors';
 		        player2View.className='paper';
+		        displayResult.innerHTML = 'Player 1 Wins!';
 		    } else {
 		    	console.log("Error");
 		    }
@@ -213,7 +224,7 @@ var controller = new Leap.Controller({ enableGestures: true });
                 
                 
                 
-                
+                /*
                 if (result1 == 'scissors' && result2 == 'rock'){
                 	console.log("Player 2 wins! Rock beats scissors");
                 } else if (result1 == 'scissors' && result2 == 'paper'){
@@ -235,6 +246,7 @@ var controller = new Leap.Controller({ enableGestures: true });
                 } else {
                 	console.log("error");
                 }
+                */
                 
                 
     	
