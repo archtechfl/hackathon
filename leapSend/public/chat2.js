@@ -7,18 +7,31 @@ window.onload = function() {
     
     var userID = '';
     
-//start leap
+    var leapValue = '';
     
-    var frame;
+    function throwPrepare(){
+    	var throwMessage = document.getElementById("throw");
+    	throwMessage.innerHTML = "Prepare to throw";
+    	setTimeout(throwIT, 4000);
+    }
+    
+    throwPrepare();
+    
+//start leap
+
+function throwIT(){
+	
+var throwMessage = document.getElementById("throw");
+throwMessage.innerHTML = "Throw!";	
+	
+setTimeout(transmit, 2000);
+    
+var frame;
 
 var fieldLeap = document.getElementById("field");
     
 //new leap motion controller
 var controller = new Leap.Controller({ enableGestures: true });
-	
-	//render cube, 48 frames per second
-	
-	//setInterval(render, (1000/48));
 	
 	//Leap collecting loop
 
@@ -31,21 +44,59 @@ var controller = new Leap.Controller({ enableGestures: true });
 	  
 	  		//Cycle through coordinates of finger tip
 	  		for(var index = 0; index < frame.pointables.length; index++)
-	  			{
+	  		
+	  		{
 	 
-			var pointable = frame.pointables[index];
-			
-			//Conver tip position to cube position
-			xPos = pointable.tipPosition[0];
-			
-			console.log(frame.hands);
-			//console.log(xPos);
-			
-			fieldLeap.value = frame;
+				var pointable = frame.pointables[index];
+				
+				//Conver tip position to cube position
+				xPos = pointable.tipPosition[0];
+					
+				console.log(frame.hands);
+				//console.log(xPos);
+				
+				fieldLeap.value = frame
+				
+				/////////////////
+				var hand1 = document.getElementById("hand1");
+				//var rock = document.getElementsByClassName("rock");
+				//var paper = document.getElementsByClassName("paper");
+				//var scissors = document.getElementsByClassName("scissors");
+						
+				if (frame.fingers.length == 2) {
+					console.log("scissors");
+					hand1.className="scissors";
+					leapValue = 'scissors';
+							
+				} else if (frame.fingers.length == 5) {
+					console.log("paper");
+					hand1.className="paper";
+					leapValue = 'paper';
+				
+				} else if (frame.fingers.length == 0 && frame.hands.length == 1) {
+					console.log("rock");
+					hand1.className="rock";
+					leapValue = 'rock';
+				
+				} else if (frame.hands.length == 0){
+					console.log("where did you go? please don't leave me!");
+					leapValue = 'wheredidyougo?';
+					
+				} else if (frame.hands.length == 2) {
+					console.log("MORTAL KOMBAT");
+					hand1.className="mortalKombat";
+					leapValue = 'mortalKombat';
+					
+				} else if (frame.hands.length == 3) {
+					hand1.className="hollander";
+					leapValue = 'hollander';
+					
+				}	
+				/////////////////
 
-		  }
+			  }//end of for loop
 
-    });
+    });//end of controller
 
     controller.connect();
 
@@ -65,18 +116,7 @@ var controller = new Leap.Controller({ enableGestures: true });
                 var result2 = messages[1];
                 console.log (result1 + " " + result2);
                 */
-                
-                //Number example
-                var result1 = parseInt(messages[0]);
-                var result2 = parseInt(messages[1]);
-                console.log (result1 + " " + result2);
-                
-                if (result1 > result2) {
-                	console.log("wooooooooooooooooooo!");
-                } else {
-                	console.log("booooooooooooooooooo!");
-                }
-                
+      
                 /*
                 console.log(messages[i]);
                 console.log(messages[i - 1]);
@@ -108,15 +148,49 @@ var controller = new Leap.Controller({ enableGestures: true });
             console.log("There is a problem:", userID);
         	}
     	});
-    sendButton.onclick = function() {
-        var leapValue = field.value;
+    	
+}//end of throw
+    	
+    function transmit() {
+        //var leapValue = field.value;
         sessionCompare[userID] = leapValue;
         socket.emit('send', { message: leapValue });
         
         console.log("Messages: " + messages);
         
         console.log(sessionCompare);
+        
+	setTimeout (compare, 3000);
+        
     };
+    
+    function compare() {
+    	
+    		var result1 = messages[0];
+        	var result2 = messages[1];
+                console.log ("Result one: " + result1 + " result 2: " + result2);
+                
+                if (result1 == 'scissors' && result2 == 'rock'){
+                	console.log("Player 2 wins! Rock beats scissors");
+                } else if (result1 == 'scissors' && result2 == 'paper'){
+                	console.log("Player 1 wins! Scissors beats paper");
+                } else if (result1 == 'scissors' && result2 == 'scissors'){
+                	console.log("Tie!");
+                } else if (result1 == 'paper' && result2 == 'scissors'){
+                	console.log("Player 2: scissors wins!");
+                } else if (result1 == 'paper' && result2 == 'rock'){
+                	console.log("Player 1: paper wins!");
+                } else if (result1 == 'paper' && result2 == 'paper'){
+                	console.log("Tie!");
+                } else if (result1 == 'rock' && result2 == 'paper'){
+                	console.log("Player 2: paper wins!");
+                } else if (result1 == 'rock' && result2 == 'scissors'){
+                	console.log("player 1: rock wins!");
+                } else {
+                	console.log("Tie!");
+                }
+    	
+    }
     
     //Creating users and storing info
     var sessionCompare = {};//holder
