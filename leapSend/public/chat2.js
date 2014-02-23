@@ -72,7 +72,15 @@ var controller = new Leap.Controller({ enableGestures: true });
                 }
                 */
                 
-           		}
+                	//Second comparison attempt
+                	if (messages.length >= 2)
+                		{
+                			var result1 = messages[0];
+                			var result2 = messages[1];
+                			console.log (result1 + " " + result2);
+        			}
+                
+           	}
             content.innerHTML = html;
        		} 
        		else 
