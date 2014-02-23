@@ -6,6 +6,13 @@ window.onload = function() {
     
     var leapValue = '';
     
+    function splashScreen() {
+    	
+    	var splashScreen = document.createElement ('img');
+    	splashScreen.class = "splash";
+    	
+    }
+    
     function throwPrepare(){
     	var throwMessage = document.getElementById("throw");
     	throwMessage.innerHTML = "Prepare to throw";
