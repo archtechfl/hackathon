@@ -10,6 +10,10 @@ var io = require('socket.io').listen(app.listen(port));
 
 io.sockets.on('connection', function (socket) {
     //socket.emit('message', { message: 'welcome to the chat' });
+    
+    var address = socket.handshake.address;
+    console.log("New connection from " + address.address + " : " + address.port);
+    
     socket.on('send', function (data) {
         io.sockets.emit('message', data);
     });
