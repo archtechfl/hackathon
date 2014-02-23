@@ -55,7 +55,7 @@ function throwIT(){
 var throwMessage = document.getElementById("throw");
 throwMessage.innerHTML = "Throw!";	
 	
-setTimeout(transmit, 1650);
+//setTimeout(transmit, 1650);
     
 var frame;
     
@@ -90,6 +90,10 @@ var controller = new Leap.Controller({ enableGestures: true });
 				
 				/////////////////
 				var hand1 = document.getElementById("hand1");
+				
+				/////
+				if (frame.fingers.length > 0){
+				/////	
 						
 				if (frame.fingers.length == 2) {
 					console.log("scissors");
@@ -109,6 +113,10 @@ var controller = new Leap.Controller({ enableGestures: true });
 				} else {
 					console.log("no valid gesture")
 				}	
+				
+				transmit();
+				
+				}//end of finger detection
 				/////////////////
 
 			  }//end of for loop
