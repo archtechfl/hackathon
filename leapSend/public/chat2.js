@@ -109,7 +109,13 @@ var controller = new Leap.Controller({ enableGestures: true });
         
         console.log(sessionCompare);
         
-		var result1 = parseInt(messages[0]);
+	setTimeout (compare, 3000);
+        
+    };
+    
+    function compare() {
+    	
+    	var result1 = parseInt(messages[0]);
         	var result2 = parseInt(messages[1]);
                 console.log (result1 + " " + result2);
                 
@@ -118,8 +124,8 @@ var controller = new Leap.Controller({ enableGestures: true });
                 } else {
                 	console.log("booooooooooooooooooo!");
                 }
-        
-    };
+    	
+    }
     
     //Creating users and storing info
     var sessionCompare = {};//holder
