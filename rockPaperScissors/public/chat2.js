@@ -6,6 +6,8 @@ window.onload = function() {
     
     var leapValue = '';
     
+    var quit = true;
+    
     //graphic screens/splash
     var loseScreen=document.createElement('img');
     loseScreen.setAttribute("id", "lost");
@@ -65,6 +67,10 @@ var controller = new Leap.Controller({ enableGestures: true });
     	controller.on( 'frame' , function( data )
     	
     	{
+    		
+    		if (quit){
+    			return;
+    		}
       
       		//Capture data
       		frame = data;
