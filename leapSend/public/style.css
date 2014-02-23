@@ -42,3 +42,9 @@
 			color: #FFF;
 			font-size: 60px;
 		}
+		
+		p#throw {
+			color:#000;
+			height:100px;
+			width:1000px;
+		}
