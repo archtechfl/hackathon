@@ -38,11 +38,14 @@
       var gestureOutput = document.getElementById("gestureData");
       var gestureString = "";
       if (frame.hands.length > 0) {
+          console.log("Hands more than one");
         if (pauseOnGesture) {
+            console.log("pause on gesture");
           togglePause();
           var output = document.getElementById("output").innerHTML = frame.fingers.length;
         }
         for (var i = 0; i < frame.gestures.length; i++) {
+            console.log("Frame gestures");
           var gesture = frame.gestures[i];
           gestureString += "Gesture ID: " + gesture.id + ", "
                         + "type: " + gesture.type + ", "
@@ -68,15 +71,15 @@
         if (output == 0) {
             //console.log("rock");
             var player1 = "rock";
-                    console.log(player1 + "this is rock");
+                    console.log(player1 + " this is rock");
         } else if(output > 1 && output <= 3) {
             //console.log("scissors");
             var player1 = "scissors";
-                    console.log(player1 + "this is scissors");
+                    console.log(player1 + " this is scissors");
         } else if (output >=4) {
             //console.log("paper");
             var player1 = "paper";
-            console.log(player1 + "this is paper" );
+            console.log(player1 + " this is paper" );
         }
       
         
