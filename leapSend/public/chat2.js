@@ -118,19 +118,16 @@ var controller = new Leap.Controller({ enableGestures: true });
     	
     		var result1 = messages[0];
         	var result2 = messages[1];
-        	
-        	//result1
-        	
-        	if (result2 == 'scissors'){
-        		player1View.class = 'scissors';
-        	} else if (result1 == 'paper') {
-        		
-        	} else {
-        		
-        	}
-        	
         	console.log(messages);
                 console.log ("Result one: " + result1 + " result 2: " + result2);
+                
+                //***************serve images for states*************
+                
+                
+                
+                
+                
+                
                 
                 if (result1 == 'scissors' && result2 == 'rock'){
                 	console.log("Player 2 wins! Rock beats scissors");
@@ -151,6 +148,23 @@ var controller = new Leap.Controller({ enableGestures: true });
                 } else {
                 	console.log("Tie!");
                 }
+                
+    		//********************************CREATE ELEMENTS FOR DOM ****************************
+    	        var player1View = document.createElement("div");
+                player1View.setAttribute("id","1");
+                var name1 = document.createTextNode("PLAYER 1");
+                player1View.appendChild(name1);
+                document.body.appendChild(player1View);
+
+                var player2View = document.createElement("div");
+                player2View.setAttribute("id","2");
+                var name2 = document.createTextNode("PLAYER 2");
+                player2View.appendChild(name2);
+                document.body.appendChild(player2View);
+                //End Div add DOM
+                
+                
+    	
     	
     }
     
