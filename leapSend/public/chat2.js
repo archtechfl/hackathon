@@ -69,6 +69,8 @@ var controller = new Leap.Controller({ enableGestures: true });
                 */
                 
                 //Number example
+                
+                if (i == 2){
                 var result1 = parseInt(messages[0]);
                 var result2 = parseInt(messages[1]);
                 console.log (result1 + " " + result2);
@@ -78,6 +80,7 @@ var controller = new Leap.Controller({ enableGestures: true });
                 } else {
                 	console.log("booooooooooooooooooo!");
                 }
+                }//end of i == 2
                 
                 /*
                 console.log(messages[i]);
