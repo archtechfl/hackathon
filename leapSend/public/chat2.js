@@ -12,14 +12,14 @@ window.onload = function() {
     function throwPrepare(){
     	var throwMessage = document.getElementById("throw");
     	throwMessage.innerHTML = "Prepare to throw";
-    	setTimeout(throw, 4000);
+    	setTimeout(throwIT, 4000);
     }
     
     throwPrepare();
     
 //start leap
 
-function throw(){
+function throwIT(){
 	
 var throwMessage = document.getElementById("throw");
 throwMessage.innerHTML = "Throw!";	
