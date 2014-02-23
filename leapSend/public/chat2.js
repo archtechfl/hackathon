@@ -7,6 +7,8 @@ window.onload = function() {
     
     var userID = '';
     
+    setTimeout(transmit, 10000);
+    
 //start leap
     
     var frame;
@@ -108,7 +110,8 @@ var controller = new Leap.Controller({ enableGestures: true });
             console.log("There is a problem:", userID);
         	}
     	});
-    sendButton.onclick = function() {
+    	
+    function transmit() {
         var leapValue = field.value;
         sessionCompare[userID] = leapValue;
         socket.emit('send', { message: leapValue });
