@@ -59,6 +59,10 @@ var controller = new Leap.Controller({ enableGestures: true });
             for(var i=0; i<messages.length; i++) 
             	{
                 html += messages[i] + '<br />';
+                
+                console.log(messages[i]);
+                console.log(messages[i - 1]);
+                
            		}
             content.innerHTML = html;
        		} 
